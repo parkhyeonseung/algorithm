@@ -10,26 +10,27 @@ def func(a,b):
     dev = a/b
     return plus,mult,dev
 
-while 1:
-    try:
-        a,b = ques()
-        plus,_,_ = func(a,b)
-        print(plus)
-    
-        a2,b2= ques()
-        _,mult,dev = func(a2,b2)
-        print(mult,dev)
 
-    except ValueError:
-        print('u have to input int or float')
-        continue
-    
-    except ZeroDivisionError:
-        print('cant devision by 0')
-        continue
-    finally:
+if __name__ == '__main__':
+    while 1:
         try:
-            print('plus = ',plus,'multiply = ',mult,'devision = ',dev)
-            break
-        except:
+            a,b = ques()
+            plus,_,_ = func(a,b)
+            print(plus)
+            a2,b2= ques()
+            _,mult,dev = func(a2,b2)
+            print(mult,dev)
+
+        except ValueError:
+            print('u have to input int or float')
             continue
+        
+        except ZeroDivisionError:
+            print('cant devision by 0')
+            continue
+        finally:
+            try:
+                print('plus = ',plus,'multiply = ',mult,'devision = ',dev)
+                break
+            except:
+                continue
